@@ -8,6 +8,26 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Nunito`,
+          `Roboto\:300,500,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

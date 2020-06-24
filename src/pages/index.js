@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import { Button } from "@material-ui/core"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 
@@ -12,6 +12,10 @@ const IndexPage = ({ data }) => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
+    <Button color="primary" variant="outlined">
+      {" "}
+      This is our first Button
+    </Button>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Img fluid={data.image1.childImageSharp.fluid} />
       <Img fluid={data.image2.childImageSharp.fluid} />
