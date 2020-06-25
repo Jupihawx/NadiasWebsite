@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { Button } from "@material-ui/core"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 
 import SEO from "../components/seo"
 
@@ -11,31 +12,36 @@ import classes from "./index.module.scss"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <section className={classes.backgroundWrapper}>
-      <div className={classes.contentWrapper}>
-        <div className={classes.textWrapper}>
-          <h2>Nadia Buer Haugen</h2>
-          <h1>
-            Arkitekt innen stedstilpasning og stedsidentitet. Ekspert i
-            fargebruk. Basert i Oslo.
-          </h1>
-          <p>
-            Jeg ønsker å bruke min spissede kunnskap til å skape bedre
-            stedstilpassede og historisk forankrede bygg og byer. Min store
-            lidenskap er farger i arkitekturen, et felt jeg mener er svært
-            viktig men dessverre underprioritert i vår utdannelse og virke.
-          </p>
-          <Button className={classes.buttonPink} variant="outlined">
-            KONTAKT
-          </Button>
-          {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <section>
+      <BackgroundImage
+        className={classes.bgimage}
+        fluid={data.backgroundstairs.childImageSharp.fluid}
+      >
+        <div className={classes.contentWrapper}>
+          <div className={classes.textWrapper}>
+            <h2>Nadia Buer Haugen</h2>
+            <h1>
+              Arkitekt innen stedstilpasning og stedsidentitet. Ekspert i
+              fargebruk. Basert i Oslo.
+            </h1>
+            <p>
+              Jeg ønsker å bruke min spissede kunnskap til å skape bedre
+              stedstilpassede og historisk forankrede bygg og byer. Min store
+              lidenskap er farger i arkitekturen, et felt jeg mener er svært
+              viktig men dessverre underprioritert i vår utdannelse og virke.
+            </p>
+            <Button className={classes.buttonPink} variant="outlined">
+              KONTAKT
+            </Button>
+            {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
             <Img fluid={data.image1.childImageSharp.fluid} />
             <Img fluid={data.image2.childImageSharp.fluid} />
           </div> */}
-          {/* <Link to="/page-2/">Go to page 2</Link> <br />
+            {/* <Link to="/page-2/">Go to page 2</Link> <br />
           <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
+          </div>
         </div>
-      </div>
+      </BackgroundImage>
     </section>
 
     <section className={classes.cvsection}>
@@ -194,6 +200,14 @@ export const query = graphql`
     mailicon: file(relativePath: { eq: "icons/Mail.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    backgroundstairs: file(relativePath: { eq: "BackgroundMain.png" }) {
+      childImageSharp {
+        fluid(quality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
