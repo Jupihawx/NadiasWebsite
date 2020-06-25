@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Nunito`,
+          `Nunito\:300,500,700`,
           `Roboto\:300,500,700`, // you can also specify font weights and styles
         ],
         display: "swap",

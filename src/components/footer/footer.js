@@ -7,10 +7,14 @@ import classes from "./footer.module.scss"
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      facebook: file(relativePath: { eq: "icons/Facebook.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+      images: allFile(
+        filter: { relativeDirectory: { eq: "icons/footericon" } }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid {
+              src
+            }
           }
         }
       }
@@ -31,18 +35,38 @@ const Footer = () => {
         </div>
         <div className={classes.rightPart}>
           <div className={classes.logoContainer}>
-            <Img
-              style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}
-              fluid={data.facebook.childImageSharp.fluid}
-            />
-            <Img
-              style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}
-              fluid={data.facebook.childImageSharp.fluid}
-            />
-            <Img
-              style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}
-              fluid={data.facebook.childImageSharp.fluid}
-            />
+            {data.images.nodes.map((image, index) => {
+              let goodLink = ""
+              switch (index) {
+                case 0:
+                  goodLink = "https://www.facebook.com/"
+                  break
+
+                case 1:
+                  goodLink = "https://www.instagram.com"
+                  break
+
+                case 2:
+                  goodLink = "https://www.linkedin.com"
+                  break
+
+                default:
+                  break
+              }
+
+              return (
+                <a href={goodLink}>
+                  <Img
+                    style={{
+                      width: `40px`,
+                      height: "40px",
+                      marginBottom: `1.45rem`,
+                    }}
+                    fluid={image.childImageSharp.fluid}
+                  />
+                </a>
+              )
+            })}
           </div>
           <div className={classes.menuContainer}>
             <Link

@@ -25,10 +25,7 @@ const IndexPage = ({ data }) => (
             lidenskap er farger i arkitekturen, et felt jeg mener er svært
             viktig men dessverre underprioritert i vår utdannelse og virke.
           </p>
-          <Button
-            style={{ color: "#F39A82", borderColor: "#F39A82" }}
-            variant="outlined"
-          >
+          <Button className={classes.buttonPink} variant="outlined">
             KONTAKT
           </Button>
           {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -61,30 +58,115 @@ const IndexPage = ({ data }) => (
             dag Koi Fargestudio).
           </p>
           <div className={classes.buttonContainer}>
-            <Button
-              style={{
-                color: "white",
-                borderColor: "#332F2E",
-                backgroundColor: "#332F2E",
-              }}
-              variant="outlined"
-            >
-              KONTAKT
+            <Button className={classes.buttonBlack} variant="outlined">
+              PROSJEKTER
             </Button>
-            <Button
-              style={{
-                color: "#332F2E",
-                borderColor: "#332F2E",
-                backgroundColor: "transparent",
-              }}
-              variant="outlined"
-            >
-              KONTAKT
+            <Button className={classes.buttonLined} variant="outlined">
+              LAST NED CV
             </Button>
           </div>
         </div>
-        <div className={classes.rightPart}></div>
+        <div className={classes.rightPart}>
+          <h3>SPISSKOMPETANSE</h3>
+          <ul>
+            <li>Fargesetting</li>
+            <li>Stedsutvikling</li>
+            <li>Illustrasjon</li>
+            <li>Teamarbeid</li>
+          </ul>
+          <h3>FERDIGHETER</h3>
+          <div className={classes.scoreHolder}>
+            <ul>
+              <li>AutoCAD</li>
+              <li>ArchiCAD</li>
+              <li>Adobe Photoshop</li>
+              <li>Adobe Indesign</li>
+              <li>Adobe Illustrator</li>
+            </ul>
+            <div className={classes.dotHolder}>
+              <div className={classes.dotContainer}>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleEmpty}></div>
+              </div>
+              <div className={classes.dotContainer}>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleEmpty}></div>
+              </div>
+              <div className={classes.dotContainer}>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleEmpty}></div>
+              </div>
+              <div className={classes.dotContainer}>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleEmpty}></div>
+                <div className={classes.circleEmpty}></div>
+              </div>
+              <div className={classes.dotContainer}>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleFull}></div>
+                <div className={classes.circleEmpty}></div>
+                <div className={classes.circleEmpty}></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section className={classes.contactSection}>
+      <div className={classes.contactContainer}>
+        <h1>Har du et prosjekt i tankene?</h1>
+        <h4>Ikke nøl med å kontakte meg for en uforpliktende samtale.</h4>
+
+        <div className={classes.contactInfoContainer}>
+          <div className={classes.contactInfo}>
+            <div
+              style={{
+                width: `50px`,
+                height: "50px",
+                marginBottom: `1.45rem`,
+                filter:
+                  "invert(68%) sepia(13%) saturate(1368%) hue-rotate(325deg) brightness(99%) contrast(93%)",
+              }}
+            >
+              <Img fluid={data.phoneicon.childImageSharp.fluid} />
+            </div>
+            <h3>Ring meg</h3>
+            <p>+47 95 93 95 19</p>
+          </div>
+          <div className={classes.contactInfo}>
+            <div
+              style={{
+                width: `50px`,
+                height: `50px`,
+                marginBottom: `1.45rem`,
+                filter:
+                  "invert(63%) sepia(84%) saturate(315%) hue-rotate(321deg) brightness(96%) contrast(97%)",
+              }}
+            >
+              <Img fluid={data.mailicon.childImageSharp.fluid} />
+            </div>
+            <h3>Send en email</h3>
+            <p>nadiabuer@gmail.com </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className={classes.nicePark}>
+      <Img fluid={data.village.childImageSharp.fluid} />
     </section>
   </Layout>
 )
@@ -101,9 +183,25 @@ export const query = graphql`
       }
     }
 
-    image2: file(relativePath: { eq: "gatsby-icon.png" }) {
+    phoneicon: file(relativePath: { eq: "icons/Phone.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    mailicon: file(relativePath: { eq: "icons/Mail.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    village: file(relativePath: { eq: "Village.png" }) {
+      childImageSharp {
+        fluid(quality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
