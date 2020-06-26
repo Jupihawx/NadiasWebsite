@@ -13,7 +13,7 @@ const Footer = () => {
         nodes {
           childImageSharp {
             fluid {
-              src
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -22,7 +22,7 @@ const Footer = () => {
   `)
 
   return (
-    <footer>
+    <footer style={{ backgroundColor: "#F39A82" }}>
       <div className={classes.footerContainer}>
         <div className={classes.leftPart}>
           <span className={classes.name}>NADIA BUER HAUGEN</span>
