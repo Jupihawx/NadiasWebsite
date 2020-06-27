@@ -3,7 +3,8 @@ import { Link, graphql } from "gatsby"
 import { Button } from "@material-ui/core"
 import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
-
+import TransitionLink from "gatsby-plugin-transition-link"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -13,10 +14,18 @@ import arrow from "../images/icons/Arrow.png"
 const ProjectTemplate = ({ data }) => {
   const { markdownRemark: projectPage } = data
 
-  const [imageNumber, setImageNumber] = useState(0)
+  const mainImageName = projectPage.frontmatter.mainImageName
+
+  const mainImageID = data.allImages.nodes.findIndex(element => {
+    return mainImageName === element.childImageSharp.fluid.originalName
+  })
+
+  const [imageNumber, setImageNumber] = useState(
+    mainImageID === -1 ? 0 : mainImageID
+  )
 
   // const [projectNumber] = useState() // DANS LE FUTUR IL FAUT LE RENDRE CONSCIENT DE QUEL PROJET ON PARLE
-  const projectNumber = 1
+  const projectNumber = projectPage.frontmatter.projectID
 
   return (
     <Layout>
@@ -24,14 +33,20 @@ const ProjectTemplate = ({ data }) => {
 
       <section>
         <div className={classes.goBack}>
-          <Link to={`/portfolio?project=${projectNumber}`}>
+          <AniLink
+            swipe
+            direction="left"
+            top="exit"
+            entryOffset={100}
+            to={`/portfolio?project=${projectNumber}`}
+          >
             <img
               src={arrow}
               alt="arrow"
               style={{ marginBottom: "0", marginRight: ".8rem" }}
             />
             TILBAKE
-          </Link>
+          </AniLink>
         </div>
         <BackgroundImage
           style={{
@@ -54,6 +69,12 @@ const ProjectTemplate = ({ data }) => {
       <section>
         <div className={classes.imageContainer}>
           {data.allImages.nodes.map((image, index) => {
+            console.log(
+              "L'image a un index " +
+                index +
+                " et le nom: " +
+                image.childImageSharp.fluid.src
+            )
             return (
               <a
                 style={{ cursor: "pointer" }}
@@ -105,6 +126,7 @@ export const query = graphql`
         imagefolder
         projectinfo
         projectID
+        mainImageName
       }
     }
 
@@ -113,6 +135,7 @@ export const query = graphql`
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
+            originalName
           }
         }
       }

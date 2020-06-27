@@ -3,6 +3,9 @@ import { Link } from "gatsby"
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import TransitionLink from "gatsby-plugin-transition-link"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 import "./slider.css"
 
 import slide1 from "../../images/Village.png"
@@ -21,14 +24,30 @@ export default props => {
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
           <div className="keen-slider__slide number-slide1">
-            <Link to="/project-0">
-              <div className="textPosition">Titre 1</div>
-            </Link>
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-0"
+              >
+                Titre 1
+              </AniLink>
+            </div>
           </div>
           <div className="keen-slider__slide number-slide2">
-            <Link to="/project-1">
-              <div className="textPosition">Titre 2</div>
-            </Link>
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-1"
+              >
+                Titre 2
+              </AniLink>
+            </div>
           </div>
           <div className="keen-slider__slide number-slide3">3</div>
           <div className="keen-slider__slide number-slide4">4</div>
