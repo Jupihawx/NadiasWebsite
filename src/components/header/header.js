@@ -7,6 +7,7 @@ const Header = () => (
     <Link to="/" className={`${classes.headerLinks} ${classes.headerTitle}`}>
       NADIA BUER HAUGEN
     </Link>
+    <span style={{ flex: "1" }}></span>
     <Link
       to="/about"
       className={classes.headerLinks}

@@ -16,6 +16,7 @@ const IndexPage = ({ data }) => (
       <BackgroundImage
         className={classes.bgimage}
         fluid={data.backgroundstairs.childImageSharp.fluid}
+        style={{ backgroundSize: "auto", backgroundPosition: "right" }}
       >
         <div className={classes.contentWrapper}>
           <div className={classes.textWrapper}>

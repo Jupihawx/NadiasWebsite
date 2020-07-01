@@ -118,7 +118,15 @@
   padding: 240px 0;
   background-size: auto;
   background-position: right;
+
+  &::before,
+  &::after {
+    padding: 240px 0;
+    background-size: auto;
+    background-position: right;
+  }
 }
+
 .background-wrapper {
   background-image: url(../images/BackgroundMain.png);
   background-repeat: no-repeat;

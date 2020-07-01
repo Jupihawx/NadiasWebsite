@@ -1,14 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import TransitionLink from "gatsby-plugin-transition-link"
+// import TransitionLink from "gatsby-plugin-transition-link"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import "./slider.css"
+import "./slider.scss"
 
-import slide1 from "../../images/Village.png"
+// import slide1 from "../../images/Village.png"
 
 export default props => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
@@ -32,7 +32,7 @@ export default props => {
                 entryOffset={100}
                 to="/project-0"
               >
-                Titre 1
+                KOMPLEKSE BYGG
               </AniLink>
             </div>
           </div>

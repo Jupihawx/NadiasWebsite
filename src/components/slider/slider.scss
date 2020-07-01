@@ -9,7 +9,19 @@ body {
   position: absolute;
   top: 100px;
   left: 100px;
-  color: #fff;
+
+  & a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    /* identical to box height, or 131% */
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #332f2e;
+  }
 }
 
 [class^="number-slide"],
@@ -114,7 +126,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #fff;
+  fill: #f39a82;
   cursor: pointer;
 }
 
