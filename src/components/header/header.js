@@ -7,7 +7,7 @@ import { stack as Menu } from "react-burger-menu"
 const Header = () => {
   var styles = {
     bmBurgerButton: {
-      position: "fixed",
+      position: "absolute",
       width: "36px",
       height: "30px",
       left: "36px",
