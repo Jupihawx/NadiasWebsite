@@ -12,11 +12,10 @@ import classes from "./index.module.scss"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <section>
+    <section className={classes.intro}>
       <BackgroundImage
         className={classes.bgimage}
         fluid={data.backgroundstairs.childImageSharp.fluid}
-        style={{ backgroundSize: "auto", backgroundPosition: "right" }}
       >
         <div className={classes.contentWrapper}>
           <div className={classes.textWrapper}>
@@ -45,12 +44,52 @@ const IndexPage = ({ data }) => (
       </BackgroundImage>
     </section>
 
-    <section className={classes.cvsection}>
+    <section className={classes.introMobile}>
+      <div className={classes.contentWrapper}>
+        <div
+          style={{
+            maxWidth: `500px`,
+            margin: "1.45rem auto",
+          }}
+        >
+          <Img fluid={data.backgroundstairs.childImageSharp.fluid} />
+        </div>
+
+        <div className={classes.textWrapper}>
+          <h1>
+            Arkitekt innen stedstilpasning og stedsidentitet. Ekspert i
+            fargebruk. Basert i Oslo.
+          </h1>
+          <p>
+            Jeg ønsker å bruke min spissede kunnskap til å skape bedre
+            stedstilpassede og historisk forankrede bygg og byer. Min store
+            lidenskap er farger i arkitekturen, et felt jeg mener er svært
+            viktig men dessverre underprioritert i vår utdannelse og virke.
+          </p>
+          <Button
+            href="#kontakt"
+            className={classes.buttonPink}
+            variant="outlined"
+            style={{ marginBottom: "2rem" }}
+          >
+            KONTAKT
+          </Button>
+          {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+            <Img fluid={data.image1.childImageSharp.fluid} />
+            <Img fluid={data.image2.childImageSharp.fluid} />
+          </div> */}
+          {/* <Link to="/page-2/">Go to page 2</Link> <br />
+          <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
+        </div>
+      </div>
+    </section>
+
+    <section className={classes.cvsection} id="about">
       <div className={classes.cvcontainer}>
         <div className={classes.leftPart}>
           <div
             style={{
-              maxWidth: `200px`,
+              width: `200px`,
               marginBottom: `1.45rem`,
             }}
           >
@@ -65,7 +104,11 @@ const IndexPage = ({ data }) => (
             dag Koi Fargestudio).
           </p>
           <div className={classes.buttonContainer}>
-            <Button className={classes.buttonBlack} variant="outlined">
+            <Button
+              href="/portfolio"
+              className={classes.buttonBlack}
+              variant="outlined"
+            >
               PROSJEKTER
             </Button>
             <Button className={classes.buttonLined} variant="outlined">
@@ -132,7 +175,7 @@ const IndexPage = ({ data }) => (
       </div>
     </section>
 
-    <section className={classes.contactSection}>
+    <section className={classes.contactSection} id="kontakt">
       <div className={classes.contactContainer}>
         <h1>Har du et prosjekt i tankene?</h1>
         <h4>Ikke nøl med å kontakte meg for en uforpliktende samtale.</h4>

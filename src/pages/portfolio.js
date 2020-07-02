@@ -38,7 +38,6 @@ const Portfolio = ({ location }) => {
           </Link>
         </div>
       </section>
-      <Link to="/">Go back to the homepage clicking this link</Link>
     </Layout>
   )
 }

@@ -36,6 +36,7 @@ export default props => {
               </AniLink>
             </div>
           </div>
+
           <div className="keen-slider__slide number-slide2">
             <div className="textPosition">
               <AniLink
@@ -45,21 +46,152 @@ export default props => {
                 entryOffset={100}
                 to="/project-1"
               >
-                Titre 2
+                MAKING IS THINKING
               </AniLink>
             </div>
           </div>
-          <div className="keen-slider__slide number-slide3">3</div>
-          <div className="keen-slider__slide number-slide4">4</div>
-          <div className="keen-slider__slide number-slide5">5</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-          <div className="keen-slider__slide number-slide6">6</div>
-          <div className="keen-slider__slide number-slide6">6</div>
+
+          <div className="keen-slider__slide number-slide3">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-2"
+              >
+                VERTICAL TRANSPARENCY
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide4">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-3"
+              >
+                LYS OG FARGE
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide5">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-4"
+              >
+                TRANSFORMASJON
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide6">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-5"
+              >
+                FARGESETTING
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide7">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-6"
+              >
+                BYUTVIKLING
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide8">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-7"
+              >
+                REKKEHUS
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide9">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-8"
+              >
+                URBANE HYTTER
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide10">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-9"
+              >
+                WORKSHOP-LEDELSE
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide11">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-10"
+              >
+                1:1
+              </AniLink>
+            </div>
+          </div>
+
+          <div className="keen-slider__slide number-slide12">
+            <div className="textPosition">
+              <AniLink
+                swipe
+                direction="right"
+                top="enter"
+                entryOffset={100}
+                to="/project-11"
+              >
+                CASE STUDIE
+              </AniLink>
+            </div>
+          </div>
         </div>
+
         {slider && (
           <>
             <ArrowLeft

@@ -5,6 +5,10 @@
   display: flex;
   letter-spacing: 0.1em;
   align-items: center;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 }
 
 .headerTitle {
@@ -26,6 +30,11 @@
   transition: 0.5s;
   position: relative;
 
+  @media (max-width: 700px) {
+    color: white;
+    margin-top: 1rem;
+  }
+
   &:last-child {
     margin-right: 48px;
   }
@@ -41,6 +50,9 @@
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 
   &:not(:first-child):hover {
@@ -66,4 +78,35 @@
     transform: scaleX(1);
     background-color: #000;
   }
+}
+.headroom {
+  z-index: 2;
+}
+
+// Responsive menu
+
+.headerContainerBurger {
+  display: none;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
+}
+
+.nadia-name {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 42px;
+  /* or 233% */
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #f39a82;
 }

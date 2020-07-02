@@ -88,6 +88,10 @@ a {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 3rem;
+
+  @media (max-width: 700px) {
+    margin-top: 7rem;
+  }
 }
 
 .content-holder {
@@ -164,4 +168,12 @@ a {
 
 body {
   background-color: white; // Pour les transitions
+}
+
+.image-thumb {
+  cursor: pointer;
+  border: 3px solid transparent;
+  &:hover {
+    border: 3px solid #f39a82;
+  }
 }

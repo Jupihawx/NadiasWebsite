@@ -69,15 +69,9 @@ const ProjectTemplate = ({ data }) => {
       <section>
         <div className={classes.imageContainer}>
           {data.allImages.nodes.map((image, index) => {
-            console.log(
-              "L'image a un index " +
-                index +
-                " et le nom: " +
-                image.childImageSharp.fluid.src
-            )
             return (
               <a
-                style={{ cursor: "pointer" }}
+                className={classes.imageThumb}
                 onClick={() => setImageNumber(index)}
               >
                 <Img

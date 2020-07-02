@@ -1,7 +1,7 @@
 ---
 title: "KOMPLEKSE BYGG"
 projectinfo: "Nytt AD-bygg, 6. semester"
-imagefolder: "projects/1"
+imagefolder: "projects/0"
 projectID: "0"
 path: "/project-0"
 mainImageName: "image1.png"
