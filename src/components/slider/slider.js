@@ -12,12 +12,44 @@ import "./slider.scss"
 
 export default props => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
+
+  const [pause, setPause] = React.useState(false)
+  const timer = React.useRef()
+
   const [sliderRef, slider] = useKeenSlider({
     initial: props.initial,
+    loop: true,
+    duration: 1000,
+    dragStart: () => {
+      setPause(true)
+    },
+    dragEnd: () => {
+      setPause(false)
+    },
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide)
     },
   })
+
+  React.useEffect(() => {
+    sliderRef.current.addEventListener("mouseover", () => {
+      setPause(true)
+    })
+    sliderRef.current.addEventListener("mouseout", () => {
+      setPause(false)
+    })
+  }, [sliderRef])
+
+  React.useEffect(() => {
+    timer.current = setInterval(() => {
+      if (!pause && slider) {
+        slider.next()
+      }
+    }, 3000)
+    return () => {
+      clearInterval(timer.current)
+    }
+  }, [pause, slider])
 
   return (
     <>
@@ -42,6 +74,7 @@ export default props => {
               <AniLink
                 swipe
                 direction="right"
+                style={{ color: "white" }}
                 top="enter"
                 entryOffset={100}
                 to="/project-1"
@@ -59,6 +92,7 @@ export default props => {
                 top="enter"
                 entryOffset={100}
                 to="/project-2"
+                style={{ color: "#f39a82" }}
               >
                 VERTICAL TRANSPARENCY
               </AniLink>
@@ -72,6 +106,7 @@ export default props => {
                 direction="right"
                 top="enter"
                 entryOffset={100}
+                style={{ color: "white" }}
                 to="/project-3"
               >
                 LYS OG FARGE
@@ -101,92 +136,9 @@ export default props => {
                 top="enter"
                 entryOffset={100}
                 to="/project-5"
-              >
-                FARGESETTING
-              </AniLink>
-            </div>
-          </div>
-
-          <div className="keen-slider__slide number-slide7">
-            <div className="textPosition">
-              <AniLink
-                swipe
-                direction="right"
-                top="enter"
-                entryOffset={100}
-                to="/project-6"
-              >
-                BYUTVIKLING
-              </AniLink>
-            </div>
-          </div>
-
-          <div className="keen-slider__slide number-slide8">
-            <div className="textPosition">
-              <AniLink
-                swipe
-                direction="right"
-                top="enter"
-                entryOffset={100}
-                to="/project-7"
-              >
-                REKKEHUS
-              </AniLink>
-            </div>
-          </div>
-
-          <div className="keen-slider__slide number-slide9">
-            <div className="textPosition">
-              <AniLink
-                swipe
-                direction="right"
-                top="enter"
-                entryOffset={100}
-                to="/project-8"
-              >
-                URBANE HYTTER
-              </AniLink>
-            </div>
-          </div>
-
-          <div className="keen-slider__slide number-slide10">
-            <div className="textPosition">
-              <AniLink
-                swipe
-                direction="right"
-                top="enter"
-                entryOffset={100}
-                to="/project-9"
+                style={{ color: "white" }}
               >
                 WORKSHOP-LEDELSE
-              </AniLink>
-            </div>
-          </div>
-
-          <div className="keen-slider__slide number-slide11">
-            <div className="textPosition">
-              <AniLink
-                swipe
-                direction="right"
-                top="enter"
-                entryOffset={100}
-                to="/project-10"
-              >
-                1:1
-              </AniLink>
-            </div>
-          </div>
-
-          <div className="keen-slider__slide number-slide12">
-            <div className="textPosition">
-              <AniLink
-                swipe
-                direction="right"
-                top="enter"
-                entryOffset={100}
-                to="/project-11"
-              >
-                CASE STUDIE
               </AniLink>
             </div>
           </div>

@@ -31,28 +31,18 @@ const ProjectTemplate = ({ data }) => {
     <Layout>
       <SEO title="Project" />
 
-      <section>
+      <section className={classes.normalView}>
         <div className={classes.goBack}>
-          <AniLink
-            swipe
-            direction="left"
-            top="exit"
-            entryOffset={100}
-            to={`/portfolio?project=${projectNumber}`}
-          >
+          <Link to={`/portfolio?project=${projectNumber}`}>
             <img
               src={arrow}
               alt="arrow"
               style={{ marginBottom: "0", marginRight: ".8rem" }}
             />
             TILBAKE
-          </AniLink>
+          </Link>
         </div>
         <BackgroundImage
-          style={{
-            backgroundSize: "contain",
-            backgroundPosition: "right top",
-          }}
           fluid={data.allImages.nodes[imageNumber].childImageSharp.fluid} // first image in the folder
         >
           <div style={{ width: "80%", margin: "0 auto" }}>
@@ -66,11 +56,41 @@ const ProjectTemplate = ({ data }) => {
         </BackgroundImage>
       </section>
 
+      <section className={classes.mobileView}>
+        <div className={classes.goBack}>
+          <Link to={`/portfolio?project=${projectNumber}`}>
+            <img
+              src={arrow}
+              alt="arrow"
+              style={{ marginBottom: "0", marginRight: ".8rem" }}
+            />
+            TILBAKE
+          </Link>
+        </div>
+        <Img
+          style={{
+            backgroundSize: "contain",
+            backgroundPosition: "right top",
+          }}
+          fluid={data.allImages.nodes[imageNumber].childImageSharp.fluid} // first image in the folder
+        ></Img>
+
+        <div style={{ width: "80%", margin: "0 auto" }}>
+          <div className={classes.contentHolder}>
+            <h2>{projectPage.frontmatter.title} </h2>
+            <p>{projectPage.frontmatter.projectinfo}</p>
+
+            <p className={classes.contentDescription}>{projectPage.html}</p>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className={classes.imageContainer}>
           {data.allImages.nodes.map((image, index) => {
             return (
               <a
+                key={index}
                 className={classes.imageThumb}
                 onClick={() => setImageNumber(index)}
               >
@@ -127,7 +147,7 @@ export const query = graphql`
     allImages: allFile(filter: { relativeDirectory: { eq: $imagefolder } }) {
       nodes {
         childImageSharp {
-          fluid {
+          fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid
             originalName
           }

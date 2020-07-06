@@ -55,7 +55,7 @@ const Footer = () => {
               }
 
               return (
-                <a href={goodLink}>
+                <a key={index} href={goodLink}>
                   <Img
                     style={{
                       width: `40px`,

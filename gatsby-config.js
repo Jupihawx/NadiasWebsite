@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Nadia Buer Haugen portfolio`,
+    description: `Jeg heter Nadia, er 28 år og er født og oppvokst i Grimstad. De siste åtte årene har jeg studert og jobbet i Lofoten, Oslo og Trondheim. Tidligere har jeg studert innen foto, statsvitenskap, lærerstudier og realfag. Jeg har alltid vært kreativt drevet og det var først da jeg begynte på arkitektstudiet at jeg følte jeg var havnet innen riktig felt.`,
+    author: `@Boris Huljak`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

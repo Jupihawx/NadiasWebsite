@@ -10,17 +10,32 @@ body {
   top: 100px;
   left: 100px;
 
+  @media (max-width: 900px) {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    margin: auto auto;
+    text-align: center;
+  }
+
   & a {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 45px;
+
+    @media (max-width: 900px) {
+      font-size: 32px;
+    }
+
     line-height: 42px;
     /* identical to box height, or 131% */
 
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #332f2e;
+    text-decoration: underline;
   }
 }
 
@@ -51,43 +66,30 @@ body {
 }
 
 .number-slide3 {
-  background: rgb(182, 255, 64);
-  background: linear-gradient(
-    128deg,
-    rgba(182, 255, 64, 1) 0%,
-    rgba(63, 255, 71, 1) 100%
-  );
-  background: linear-gradient(
-    128deg,
-    rgba(189, 255, 83, 1) 0%,
-    rgba(43, 250, 82, 1) 100%
-  );
+  background-image: url("../../images/projects/2/3.2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .number-slide4 {
-  background: rgb(64, 255, 242);
-  background: linear-gradient(
-    128deg,
-    rgba(64, 255, 242, 1) 0%,
-    rgba(63, 188, 255, 1) 100%
-  );
+  background-image: url("../../images/projects/3/1.1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.number-slide5 {
+  background-image: url("../../images/projects/4/5.1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.number-slide5 {
-  background: rgb(255, 64, 156);
-  background: linear-gradient(
-    128deg,
-    rgba(255, 64, 156, 1) 0%,
-    rgba(255, 63, 63, 1) 100%
-  );
-}
 .number-slide6 {
-  background: rgb(64, 76, 255);
-  background: linear-gradient(
-    128deg,
-    rgba(64, 76, 255, 1) 0%,
-    rgba(174, 63, 255, 1) 100%
-  );
+  background-image: url("../../images/projects/5/6.1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .navigation-wrapper {

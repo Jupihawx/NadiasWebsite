@@ -257,7 +257,7 @@ export const query = graphql`
       }
     }
 
-    village: file(relativePath: { eq: "Village.png" }) {
+    village: file(relativePath: { eq: "projects/1/2.0.png" }) {
       childImageSharp {
         fluid(quality: 90) {
           ...GatsbyImageSharpFluid
