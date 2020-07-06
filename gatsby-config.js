@@ -48,12 +48,29 @@ module.exports = {
           {
             resolve: `gatsby-remark-remove-root-p-tag`,
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 1920,
+            },
+          },
         ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 90,
+        maxWidth: 1920,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
