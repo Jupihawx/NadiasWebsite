@@ -63,6 +63,7 @@ export default props => {
                 top="enter"
                 entryOffset={100}
                 to="/project-0"
+                style={{ borderBottom: "3px solid #332f2e" }}
               >
                 KOMPLEKSE BYGG
               </AniLink>
@@ -74,7 +75,7 @@ export default props => {
               <AniLink
                 swipe
                 direction="right"
-                style={{ color: "white" }}
+                style={{ color: "white", borderBottom: "3px solid white" }}
                 top="enter"
                 entryOffset={100}
                 to="/project-1"
@@ -92,7 +93,9 @@ export default props => {
                 top="enter"
                 entryOffset={100}
                 to="/project-2"
-                style={{ color: "#f39a82" }}
+                style={{ borderBottom: "3px solid #332f2e" }}
+
+                // style={{ color: "#f39a82" }}
               >
                 VERTICAL TRANSPARENCY
               </AniLink>
@@ -106,7 +109,7 @@ export default props => {
                 direction="right"
                 top="enter"
                 entryOffset={100}
-                style={{ color: "white" }}
+                style={{ color: "white", borderBottom: "3px solid white" }}
                 to="/project-3"
               >
                 LYS OG FARGE
@@ -122,6 +125,7 @@ export default props => {
                 top="enter"
                 entryOffset={100}
                 to="/project-4"
+                style={{ borderBottom: "3px solid #332f2e" }}
               >
                 TRANSFORMASJON
               </AniLink>
@@ -136,7 +140,7 @@ export default props => {
                 top="enter"
                 entryOffset={100}
                 to="/project-5"
-                style={{ color: "white" }}
+                style={{ color: "white", borderBottom: "3px solid white" }}
               >
                 WORKSHOP-LEDELSE
               </AniLink>

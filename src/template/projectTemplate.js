@@ -46,6 +46,8 @@ const ProjectTemplate = ({ data }) => {
           style={{
             backgroundSize: "contain",
             backgroundPosition: "right top",
+            width: "85%",
+            margin: "0 auto",
           }}
           fluid={data.allImages.nodes[imageNumber].childImageSharp.fluid} // first image in the folder
         >

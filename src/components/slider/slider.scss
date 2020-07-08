@@ -10,6 +10,12 @@ body {
   top: 100px;
   left: 100px;
 
+  padding: 1rem;
+
+  background: rgba(255, 255, 255, 0.2);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(2px);
+
   @media (max-width: 900px) {
     position: relative;
     top: 0px;
@@ -35,7 +41,6 @@ body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #332f2e;
-    text-decoration: underline;
   }
 }
 

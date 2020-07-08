@@ -39,15 +39,17 @@ const Footer = () => {
               let goodLink = ""
               switch (index) {
                 case 0:
-                  goodLink = "https://www.facebook.com/"
+                  goodLink = "https://www.facebook.com/nadia.b.haugen"
                   break
 
                 case 1:
-                  goodLink = "https://www.instagram.com"
+                  goodLink =
+                    "https://instagram.com/arkitektull?igshid=zwyixmzn3h2b"
                   break
 
                 case 2:
-                  goodLink = "https://www.linkedin.com"
+                  goodLink =
+                    "https://www.linkedin.com/in/nadia-buer-haugen-640a4b122"
                   break
 
                 default:
