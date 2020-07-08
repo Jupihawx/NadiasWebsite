@@ -94,13 +94,23 @@ a {
   }
 }
 
+.content-wrapper {
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+}
+
 .content-holder {
   padding-top: 5rem;
-  @media (max-width: 900px) {
-    padding-top: 0;
-  }
   padding-left: 3rem;
 
+  @media (max-width: 900px) {
+    padding-top: 0;
+    padding-left: 0rem;
+  }
   & h2 {
     font-family: Roboto;
     font-style: normal;
@@ -117,7 +127,6 @@ a {
 
     @media (max-width: 900px) {
       text-align: center;
-      color: white;
     }
   }
 
@@ -130,11 +139,12 @@ a {
     margin-bottom: 0;
 
     color: #000000;
-
+    @media (max-width: 900px) {
+      text-align: justify;
+    }
     &:first-of-type {
       @media (max-width: 900px) {
         text-align: center;
-        color: white;
       }
     }
   }
@@ -160,11 +170,17 @@ a {
     &::before {
       content: "";
       width: 15%;
+
       border-bottom: solid 3px #f3dad0;
       position: absolute;
       left: 0;
       top: -2.5rem;
       z-index: 1;
+
+      @media (max-width: 900px) {
+        left: 35%;
+        width: 30%;
+      }
     }
   }
 }
@@ -186,6 +202,10 @@ a {
   & > * {
     margin-right: 15px;
     margin-top: 15px;
+    @media (max-width: 900px) {
+      margin-right: 0px;
+      margin-top: 0px;
+    }
   }
 }
 

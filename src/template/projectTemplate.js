@@ -49,7 +49,7 @@ const ProjectTemplate = ({ data }) => {
           }}
           fluid={data.allImages.nodes[imageNumber].childImageSharp.fluid} // first image in the folder
         >
-          <div style={{ width: "80%", margin: "0 auto" }}>
+          <div className={classes.contentWrapper}>
             <div className={classes.contentHolder}>
               <h2>{projectPage.frontmatter.title} </h2>
               <p>{projectPage.frontmatter.projectinfo}</p>
