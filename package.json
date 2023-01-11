@@ -21,7 +21,7 @@
     "gatsby-remark-images": "^3.3.17",
     "gatsby-remark-remove-root-p-tag": "^1.0.1",
     "gatsby-source-filesystem": "^2.3.18",
-    "gatsby-transformer-remark": "^2.8.23",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.10",
     "gsap": "^3.3.4",
     "headroom.js": "^0.11.0",
